@@ -4,6 +4,8 @@ services:
   web:
     build: .
     image: "sitephotomvn:0.1"
+    volumes:
+      - "./tmp:/tmp"
     read_only: true
     command:
       [

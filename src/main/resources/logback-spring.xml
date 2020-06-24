@@ -12,28 +12,12 @@
 
     <springProfile name="prod">
 
-        <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-            <file>/Users/kimhuang/source/canvas/sitephotovue/log/app.log</file>
-
-            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-                <fileNamePattern>log/archived/app.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-                <!-- each archived file, size max 10MB -->
-                <maxFileSize>10MB</maxFileSize>
-                <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
-                <totalSizeCap>20GB</totalSizeCap>
-                <!-- 60 days to keep -->
-                <maxHistory>60</maxHistory>
-            </rollingPolicy>
-
-            <encoder>
-                <pattern>%d %p %c{1.} [%t] %m%n</pattern>
-            </encoder>
-        </appender>
+       <appender-ref ref="CONSOLE"/>
 
         <logger name="org.springframework" level="INFO"/>
         <logger name="edu.princeton.sitephotovue" level="DEBUG"/>
         <root level="ERROR">
-            <appender-ref ref="FILE-ROLLING"/>
+            <appender-ref ref="CONSOLE"/>
         </root>
     </springProfile>
 
