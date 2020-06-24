@@ -1,0 +1,19 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+*.txt
+*.p12
+.DS_Store
+*copy*
+mvnw*
+.mvn
+.factorypath
+.classpath
+.project
+.settings
+*swp
+
+### VS Code ###
+.vscode/

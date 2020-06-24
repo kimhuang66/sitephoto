@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    image: "sitephotomvn:0.1"
+    read_only: true
+    command:
+      [
+        "java",
+        "-Djava.security.egd=file:/dev/./urandom",
+        "-jar",
+        "/app/sitephotomvn.jar",
+      ]
+    ports:
+      - "8080:8080"
