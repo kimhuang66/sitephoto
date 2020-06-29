@@ -20,4 +20,4 @@ EXPOSE 8080
 
 RUN mkdir /app
 COPY --from=builder /tmp/target/*.jar /app/sitephotomvn.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/sitephotomvn.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dsitephotoltiprovider.properties=file:/app/sitephotoltiprovider.properties","-jar","/app/sitephotomvn.jar","--spring.config.location=/app/sitephotoltiprovider.properties"]

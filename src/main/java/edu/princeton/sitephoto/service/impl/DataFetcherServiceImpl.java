@@ -4,12 +4,13 @@ import org.springframework.web.client.RestTemplate;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 
 import edu.princeton.sitephoto.Constants;
 import edu.princeton.sitephoto.Util;
+import edu.princeton.sitephoto.config.SitephotoProperties;
 import edu.princeton.sitephoto.service.DataFetcherService;
 import edu.princeton.sitephoto.data.CourseMemberRaw;
 import edu.princeton.sitephoto.data.Token;
@@ -28,6 +29,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class DataFetcherServiceImpl implements DataFetcherService {
+
+    @Autowired
+    SitephotoProperties props;
 
     private static final Logger logger = LoggerFactory.getLogger(DataFetcherServiceImpl.class);
 
@@ -55,8 +59,9 @@ public class DataFetcherServiceImpl implements DataFetcherService {
             uri = new URI(Constants.APIS_URL + Constants.AUTH_PATH);
 
             logger.debug("uri is : " + uri);
-            String auth = Constants.REST_KEY + ":" + Constants.REST_SECRET;
-            // logger.debug("the auth: " + auth);
+            // String auth = Constants.REST_KEY + ":" + Constants.REST_SECRET;
+            String auth = props.getRestKey() + ":" + props.getRestSecret();
+            logger.debug("the auth: " + auth);
             token = getToken(uri, auth);
             // if (token != null) {
             // logger.debug("the access_token is " + token.getAccess_token());

@@ -10,13 +10,17 @@ import lombok.Setter;
 
 @Component
 @ConfigurationProperties
-@PropertySource("classpath:sitephotoltiprovider.properties")
+@PropertySource(value = "${sitephotoltiprovider.properties}")
 @Getter
 @Setter
 public class SitephotoProperties {
-    @Value("${key}")
+    @Value("${ltikey}")
     private String key;
-    @Value("${secret}")
+    @Value("${ltisecret}")
     private String secret;
+    @Value("${apiserverKey}")
+    private String restKey;
+    @Value("${apiserverSecret}")
+    private String restSecret;
 
 }

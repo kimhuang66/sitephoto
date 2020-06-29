@@ -3,16 +3,18 @@ version: "3"
 services:
   web:
     build: .
-    image: "sitephotomvn:0.1"
+    image: "sitephotomvn:0.2"
     volumes:
       - "./tmp:/tmp"
+      - "./sitephotoltiprovider.properties:/app/sitephotoltiprovider.properties:ro"
     read_only: true
     command:
       [
         "java",
         "-Djava.security.egd=file:/dev/./urandom",
+        "-Dsitephotoltiprovider.properties=file:./sitephotoltiprovider.properties",
         "-jar",
         "/app/sitephotomvn.jar",
       ]
     ports:
-      - "8080:8080"
+      - "10085:8080"

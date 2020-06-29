@@ -7,25 +7,9 @@ public class Constants {
     public final static String JPG_EXT = ".jpg";
     public final static String PHOTO_FORMAT = "JPG";
 
-    // api-qa
-    // public final static String APIS_URL = "https://api-qual.princeton.edu";
-    // public final static String REST_KEY = "HGLW_xLMbJejAYEgG1iaQfmcV5ca";
-    // public final static String REST_SECRET = "t26p1G_xuQRQ9KzBdFTBBDhbIUMa";
-    // public final static String ROSTER_PATH = "/lms-data/1.0.0/roster";
-    // public final static String IMAGE_PATH = "/people-image/1.0.0/photos";
-
-    // api-dev
-    // public final static String APIS_URL = "https://api-dev.princeton.edu";
-    // public final static String REST_KEY = "9Ygu2S6EfZuKdBfl1z6oXnuIz3Ea";
-    // public final static String REST_SECRET = "L7QC3U3VXpg2Ww7eE9Rnlo7bfTUa";
-    // public final static String ROSTER_PATH = "/lms-data/1.0.0-SNAPSHOT/roster";
-    // public final static String IMAGE_PATH =
-    // "/people-image/1.0.0-SNAPSHOT/photos";
-
     // api-prod
     public final static String APIS_URL = "https://api.princeton.edu:443";
-    public final static String REST_KEY = "LnJFeW_SE9OsJIHFbgCf9FUlj5sa";
-    public final static String REST_SECRET = "Maz4aZXgJ1BunJfdmh46TBEI55Aa";
+    
     public final static String ROSTER_PATH = "/lms-data/1.0.0/roster";
     public final static String IMAGE_PATH = "/people-image/1.0.0/photos";
 
