@@ -24,7 +24,7 @@ public class LtiLaunchController {
 
     private static final Logger logger = LoggerFactory.getLogger(LtiLaunchController.class);
 
-    @RequestMapping(value = "/launch", method = RequestMethod.POST)
+    @RequestMapping(value = "/launch", method = { RequestMethod.GET, RequestMethod.POST })
     public String ltiLaunch(@ModelAttribute LtiLaunchData ltiData, HttpSession session) throws Exception {
         // Invalidate the session to clear out any old data
         session.invalidate();

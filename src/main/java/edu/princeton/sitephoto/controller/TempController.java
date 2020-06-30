@@ -80,7 +80,7 @@ public class TempController {
                 + "      &lt;lticm:property name=\"privacy_level\"&gt;public&lt;/lticm:property&gt;<br />"
                 + "      &lt;lticm:options name=\"course_navigation\"&gt;<br />"
                 + "        &lt;lticm:property name=\"enabled\"&gt;true&lt;/lticm:property&gt;<br />"
-                + "        &lt;lticm:property name=\"visibility\"&gt;members&lt;/lticm:property&gt;<br />"
+                + "        &lt;lticm:property name=\"visibility\"&gt;admins&lt;/lticm:property&gt;<br />"
                 + "      &lt;/lticm:options&gt;<br />" + "&lt;/blti:extensions&gt;<br />"
                 + "&lt;/cartridge_basiclti_link&gt;<br />" + "----------- Stop. Do not copy this line -----------<br />"
                 + "    </pre>" + "" + "</body>" + "</html>";
