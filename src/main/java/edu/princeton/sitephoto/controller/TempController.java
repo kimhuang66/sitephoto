@@ -44,11 +44,19 @@ public class TempController {
 
     @RequestMapping(value = { "/lti/config.xml" }, method = { RequestMethod.GET, RequestMethod.POST })
     public @ResponseBody String lti_config(HttpServletRequest request, HttpServletResponse response) {
-        StringBuffer url = request.getRequestURL();
-        String uri = request.getRequestURI();
-        int idx = (((uri != null) && (uri.length() > 0)) ? url.indexOf(uri) : url.length());
-        String host = url.substring(0, idx); // base url
-        String launchUrl = host + "/launch";
+        String launchUrl = "";
+        String serverName = "";
+        serverName = request.getHeader("X-Forwarded-Host");
+        if (serverName != null && !"".equals(serverName)) {
+            launchUrl = request.getHeader("X-Forwarded-Proto") + "://" + serverName + "/launch";
+        } else {
+            StringBuffer url = request.getRequestURL();
+            String uri = request.getRequestURI();
+            int idx = (((uri != null) && (uri.length() > 0)) ? url.indexOf(uri) : url.length());
+            String host = url.substring(0, idx); // base url
+            launchUrl = host + "/launch";
+        }
+
         String str = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
                 + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
                 + "<html xmlns=\"http://www.w3.org/1999/xhtml\">"
