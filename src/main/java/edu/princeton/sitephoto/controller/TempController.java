@@ -60,7 +60,7 @@ public class TempController {
         String str = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>"
                 + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">"
                 + "<html xmlns=\"http://www.w3.org/1999/xhtml\">"
-                + "<head><title>Student Attendance Reporting LTI integration</title></head>" + "<body>"
+                + "<head><title>Student Photo Roster LTI integration</title></head>" + "<body>"
                 + "<h2>Student Photo Roster LTI integration</h2>"
                 + "<p>In order to use this LTI plugin for Canvas, please follow these steps:</p>" + "<ol>"
                 + "    <li>Navigate to the account settings</li>" + "    <li>Click on the \"Apps\" tab</li>"
