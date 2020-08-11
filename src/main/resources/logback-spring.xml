@@ -4,10 +4,10 @@
 
     <springProfile name="default">
         <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
-
         <root level="INFO">
-            <appender-ref ref="CONSOLE"/>
-        </root>
+        <appender-ref ref="CONSOLE"/>
+         </root>
+          <logger name="edu.princeton.sitephoto" level="DEBUG"/>
     </springProfile>
 
     <springProfile name="prod">
@@ -15,7 +15,7 @@
        <appender-ref ref="CONSOLE"/>
 
         <logger name="org.springframework" level="INFO"/>
-        <logger name="edu.princeton.sitephotovue" level="DEBUG"/>
+        <logger name="edu.princeton.sitephoto" level="INFO"/>
         <root level="ERROR">
             <appender-ref ref="CONSOLE"/>
         </root>

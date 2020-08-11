@@ -201,38 +201,29 @@ public class TempController {
         return res;
     }
 
-    @RequestMapping(path = "/test")
-    // http://localhost:8080/test?course=COS126_S2020&name=test
-    public @ResponseBody String test(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            // if (authenticate(request, props)) {
-            // logger.debug("authenticated");
-            String crs_id = request.getParameter("course");
-            String crs_name = request.getParameter("name");
-            // String user_uuid = request.getParameter("user_id");
-            // String[] roles = request.getParameterValues("roles");
-            // for (String role : roles) {
-            // logger.debug("roles: " + role);
-            // if (isAuthorized(role) == true) {
-            String res = "<html><head>" + "<link rel = \"stylesheet\"" + " type = \"text/css\""
-                    + " href = \"../css/style.css\"" + "</head>"
-                    + "<script src=\"https://cdn.jsdelivr.net/npm/vue/dist/vue.js\"></script>"
-                    + "<script src=\"https://unpkg.com/axios/dist/axios.min.js\"></script>"
-                    // + "<script src=\"https://unpkg.com/vuex@3.1.1/dist/vuex.js\"></script>"
-                    + "<body class=\"sitephotos\"><div id=\"app\" crs_id=\"" + crs_id + "\" crs_name=\"" + crs_name
-                    + "\">" + "</div>" + "<script src=\"../js/main.js?dev=" + Math.floor(Math.random() * 100)
-                    + "\"></script></body></html>";
-            logger.debug("html string: " + res);
-            return res;
-            // }
-            // }
-            // }
-        } catch (Exception e) {
-            logger.debug("Exception thrown when launch, " + e.toString());
-            return "Error launch the photo roster: " + e.toString();
-        }
-    }
-
+    /*
+     * @RequestMapping(path = "/test") //
+     * http://localhost:8080/test?course=COS126_S2020&name=test public @ResponseBody
+     * String test(HttpServletRequest request, HttpServletResponse response) { try {
+     * // if (authenticate(request, props)) { // logger.debug("authenticated");
+     * String crs_id = request.getParameter("course"); String crs_name =
+     * request.getParameter("name"); // String user_uuid =
+     * request.getParameter("user_id"); // String[] roles =
+     * request.getParameterValues("roles"); // for (String role : roles) { //
+     * logger.debug("roles: " + role); // if (isAuthorized(role) == true) { String
+     * res = "<html><head>" + "<link rel = \"stylesheet\"" + " type = \"text/css\""
+     * + " href = \"../css/style.css\"" + "</head>" +
+     * "<script src=\"https://cdn.jsdelivr.net/npm/vue/dist/vue.js\"></script>" +
+     * "<script src=\"https://unpkg.com/axios/dist/axios.min.js\"></script>" // +
+     * "<script src=\"https://unpkg.com/vuex@3.1.1/dist/vuex.js\"></script>" +
+     * "<body class=\"sitephotos\"><div id=\"app\" crs_id=\"" + crs_id +
+     * "\" crs_name=\"" + crs_name + "\">" + "</div>" +
+     * "<script src=\"../js/main.js?dev=" + Math.floor(Math.random() * 100) +
+     * "\"></script></body></html>"; logger.debug("html string: " + res); return
+     * res; // } // } // } } catch (Exception e) {
+     * logger.debug("Exception thrown when launch, " + e.toString()); return
+     * "Error launch the photo roster: " + e.toString(); } }
+     */
     @RequestMapping(path = "/sitephotomenu")
     public @ResponseBody String launch(HttpServletRequest request, HttpServletResponse response) throws Exception {
         // try {

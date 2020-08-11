@@ -309,11 +309,15 @@ Vue.component("student", {
       return this.selected_proxy === "stu_search" ? "block" : "none";
     },
     precept() {
-      let p = this.item.precept[0].id;
-      for (let i = 1; i < this.item.precept.length; i++) {
-        p = p + "," + this.item.precept[i].id;
+      if (this.item.precept != null && this.item.precept.length > 0) {
+        let p = this.item.precept[0].id;
+        for (let i = 1; i < this.item.precept.length; i++) {
+          p = p + "," + this.item.precept[i].id;
+        }
+        return p;
+      } else {
+        return "";
       }
-      return p;
     },
     item() {
       return JSON.parse(this.student);

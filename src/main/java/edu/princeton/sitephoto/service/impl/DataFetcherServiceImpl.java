@@ -114,7 +114,7 @@ public class DataFetcherServiceImpl implements DataFetcherService {
         }
         if (response != null) {
             crsDetails = response.getBody();
-            logger.debug("crsDetails: " + crsDetails);
+            // logger.debug("crsDetails: " + crsDetails);
         }
         return crsDetails;
     }

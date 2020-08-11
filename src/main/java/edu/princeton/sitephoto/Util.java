@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import edu.princeton.sitephoto.data.User;
 
 public class Util {
+    private static final Logger logger = LoggerFactory.getLogger(Util.class);
 
     public static void orderByUserSortName(LinkedHashMap<String, User> m, final Comparator<? super User> c) {
         List<Map.Entry<String, User>> entries = new ArrayList<>(m.entrySet());
@@ -122,4 +123,20 @@ public class Util {
         }
         return " '" + (String.valueOf(classyear)).substring(2);
     }
+
+    public static String getCrsSection(String crs_id) {
+        if ("".equals(crs_id)) {
+            return "";
+        }
+        final String term = crs_id.split("_")[1];
+        String first = crs_id.split("_")[0];
+        String[] crsS = first.split("-");
+
+        // it is a course
+        if (crsS[1] != null && crsS[1].length() < 5) {
+            return crsS[1];
+        }
+        return "";
+    }
+
 }
